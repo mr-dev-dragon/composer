@@ -1,0 +1,17 @@
+language: node_js
+addons:
+  chrome: stable
+cache:
+  directories:
+    - ~/.npm
+notifications:
+  email: false
+node_js:
+  - '12'
+script:
+  - npm run test:ci && gulp build
+after_success:
+  - if [ "$TRAVIS_BRANCH" = "master" -a "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run semantic-release; fi
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

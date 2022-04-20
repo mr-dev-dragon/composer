@@ -1,0 +1,23 @@
+{
+  "name": "@acaengine/composer",
+  "version": "0.0.0-development",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "angular",
+    "composer"
+  ],
+  "description": "Engine Composer API for Angular 8+",
+  "homepage": "https://github.com/acaengine/composer#readme",
+  "bugs": {
+      "url": "https://github.com/acaengine/composer/issues"
+  },
+  "dependencies": {
+    "@acaengine/ts-client": "^3.1.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "^8.0.0",
+    "@angular/core": "^8.0.0"
+  }
+}

@@ -1,0 +1,83 @@
+/*==============================*\
+|| Shared Global SASS Variables ||
+\*==============================*/
+
+/*=================================*\
+||         Color Variables         ||
+\*=================================*/
+
+$color1: #0288D1;
+$color2: #FF9800;
+$color2-dark: #FB8C00;
+
+$color-disabled: rgba(#000, .2);
+
+$success: #4CAF50;
+$error: #F44336;
+$error-neutral: #6d6e71;
+$error-active: #D32F2F;
+$pending: #FF9800;
+$neutral: #6d6e71;
+
+/*=================================*\
+||          Font Variables         ||
+\*=================================*/
+
+$desktop-font-size: 20px;
+$tablet-font-size: 20px;
+$mobile-font-size: 16px;
+
+$charter: 'CharterITC BT', Georgia, 'Times New Roman', Times, serif;
+$font-stack: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+
+$heading-font: $charter;
+$main-font: $font-stack;
+
+/*===================*\
+||   Media Queries   ||
+\*===================*/
+
+$break-mobile: 450px;
+$break-tablet: 800px;
+
+$break-landscape-mobile: 800px;
+$break-landscape-tablet: 1048px;
+
+@mixin respond-to($media) {
+    @if $media == mobile {
+        @media only screen and (orientation: portrait) and (max-width: $break-mobile) {
+            @content;
+        }
+        @media only screen and (orientation: landscape) and (max-width: $break-landscape-mobile) {
+            @content;
+        }
+    } @else if $media == not-mobile {
+        @media only screen and (orientation: portrait) and (min-width: $break-mobile + 1) {
+            @content;
+        }
+        @media only screen and (orientation: landscape) and (min-width: $break-landscape-mobile + 1) {
+            @content;
+        }
+    } @else if $media == tablet {
+        @media only screen and (orientation: portrait) and (min-width: $break-mobile + 1) and (max-width: $break-tablet) {
+            @content;
+        }
+        @media only screen and (orientation: landscape) and (min-width: $break-landscape-mobile + 1) and (max-width: $break-landscape-tablet) {
+            @content;
+        }
+    } @else if $media == tablet-mobile {
+        @media only screen and (orientation: portrait) and (max-width: $break-tablet) {
+            @content;
+        }
+        @media only screen and (orientation: landscape) and (max-width: $break-landscape-tablet) {
+            @content;
+        }
+    } @else if $media == desktop {
+        @media only screen and (orientation: portrait) and (min-width: $break-tablet) {
+            @content;
+        }
+        @media only screen and (orientation: landscape) and (min-width: $break-landscape-tablet) {
+            @content;
+        }
+    }
+}

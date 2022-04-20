@@ -1,0 +1,10 @@
+<div class="app">
+    <div class="test">
+        <i binding [(model)]="model.value" sys="sys-untiLuwXrI" mod="Bookings" bind="today"></i>
+        {{ model.value | json }}
+        {{ model.active }}
+
+        <button binding onEvent="click" sys="sys-untiLuwXrI" mod="Bookings" exec="power">Change</button>
+        <input type="checkbox" [(ngModel)]="model.active" binding onEvent="change" sys="sys-untiLuwXrI" mod="Bookings" exec="power" [params]="[model.active]"/>
+    </div>
+</div>
